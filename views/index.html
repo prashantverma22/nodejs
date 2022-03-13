@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+</head>
+
+<body>
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname"><br><br>
+        <button id="signup">Sign Up</button>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        let btn = document.getElementById('signup')
+        btn.addEventListener('click', async function(e){
+            e.preventDefault();
+            let first = document.getElementById('fname').value;
+            let last = document.getElementById('lname').value;
+            let response = await axios.post('/auth/signup', {first, last})
+            console.log("Axios response: ", response);
+        })
+    </script>
+</body>
+
+</html>
