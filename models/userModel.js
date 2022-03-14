@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const validator = require('email-validator');
 const bcrypt = require('bcrypt');
 
-const db_link = "mongodb+srv://admin:B9HJbcXsoXvEPFup@cluster0.f3haf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const db_link = "**************************************";
 
 main().catch(err => console.log(err));
 
